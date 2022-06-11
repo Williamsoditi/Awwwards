@@ -1,0 +1,38 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if title %}
+    <title>Awwwards - {{title}}</title>
+    {% else %}
+      <title> Awwwards </title>
+    {% endif %}
+
+    {% block styles %}
+      {% bootstrap_css %}
+      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" /> -->
+      <!-- <link rel="icon" href="https://assets.awwwards.com/assets/images/favicon.svg" type="image/svg+xml"> -->
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
+
+</head>
+<body>
+    {% include "navbar.html" %}
+
+    {% block content %}
+
+    {% include "footer.html" %}
+
+    {%endblock%}
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>
