@@ -55,10 +55,10 @@ class Project(models.Model):
 class Rating(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    design_rate = models.IntegerField(default=0, blank=True, null=True)
-    usability_rate = models.IntegerField(default=0, blank=True, null=True)
-    content_rate = models.IntegerField(default=0, blank=True, null=True)
-    avarage_rate = models.IntegerField(default=0, blank=True, null=True)
+    design = models.IntegerField(default=0, blank=True, null=True)
+    usability = models.IntegerField(default=0, blank=True, null=True)
+    content = models.IntegerField(default=0, blank=True, null=True)
+    average = models.IntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return self.project
