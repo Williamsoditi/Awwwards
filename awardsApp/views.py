@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from .forms import ProjectForm, ProfileForm
+from .forms import ProjectForm, ProfileForm, UpdateProfileForm
 import cloudinary.api
 import cloudinary.uploader
 import cloudinary
@@ -121,17 +121,17 @@ def rate(request,id):
     if request.method == 'POST':
         project = Project.objects.get(id = id)
         current_user = request.user
-        design_rate = request.POST['design']
-        content_rate = request.POST['content']
-        usability_rate = request.POST['usability']
+        design = request.POST['design']
+        content = request.POST['content']
+        usability = request.POST['usability']
 
         Rating.objects.create(
             project=project,
             user=current_user,
-            design_rate=design_rate,
-            usability_rate=usability_rate,
-            content_rate=content_rate,
-            avarage_rate=round((float(design_rate)+float(usability_rate)+float(content_rate))/3,2),)
+            design=design,
+            usability=usability,
+            content_rate=content,
+            avarage_rate=round((float(design)+float(usability)+float(content))/3,2),)
 
         return render(request,"project_details.html",{"project":project})
     else:
