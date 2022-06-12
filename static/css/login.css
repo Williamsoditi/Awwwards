@@ -1,0 +1,83 @@
+
+.login-info{
+    text-decoration: none;
+    color: black;
+}
+.login-info:hover{
+    text-decoration: none;
+    color: #8e8e8e;
+}
+
+.alternative{
+    font-weight: 600;
+    font-size: 19px;
+}
+.register{
+    color: #49c5b6;
+}
+.register:hover{
+    color: black;
+    text-decoration: none;
+}
+.general-form{
+    padding: 4vw;
+}
+.login-btn{
+    background-color: #49c5b6;
+    color: #fff;
+    font-weight: bold;
+    /* height: 35px; */
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    padding: 1vw;
+}
+label{
+    color: #8e8e8e;
+}
+.forgot-pass{
+    padding: 1vw;
+}
+.forgot-pass a{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #49c5b6;
+    text-decoration: underline;
+}
+.btn-block{
+    border-radius: 0;
+    padding: 0.9vw;
+}
+.fb-logo{
+    height: 30px;
+}
+#facebook{
+    background-color: #3b5998;
+    color: white;
+    border: none;
+}
+#twitter{
+    background-color: #26a7de;
+    border: none;
+}
+#google{
+    color: black;
+    background-color: white;
+    border: none;
+}
+#facebook:hover, #twitter:hover, #google:hover{
+    opacity: 0.8;
+}
+.terms{
+    margin-top: 1.5vw;
+}
+.conditions{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #49c5b6;
+    text-decoration: underline;
+}
+.conditions:hover{
+    color: #49c5b6;
+}
