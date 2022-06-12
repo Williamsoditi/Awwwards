@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load bootstrap4 %}
+<div class="p-3">
+    <h1 class="text-center"><strong>SUBMIT YOUR SITE</strong></h1>
+    <p class="text-center">Every month, more than <strong>2,000,000 unique users </strong>who specialize in web design,
+        development and the latest web technologies, visit our site looking for inspiration, trends and talent on the
+        web.</p>
+    <hr>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div>
+                <h5 class="text-center"><strong>Enter project details</strong></h5>
+                <div class="form-data">
+                    <form action="{% url 'project' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% bootstrap_form form%}
+                        <button class="submitproj-btn" type="submit">ADD PROJECT</button>
+                        <input type="hidden" name="next" value="{{next}}">    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

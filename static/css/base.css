@@ -52,7 +52,20 @@
 .navigation{
     background-color: white;
 }
-
+.submitproj-btn{
+    background-color: #49c5b6;
+    color: #fff;
+    font-weight: bold;
+    /* height: 35px; */
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    padding: 1vw;
+}
+.submitproj-btn:hover{
+    opacity: 0.8;
+}
 
 
 
