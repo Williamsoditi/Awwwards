@@ -1,0 +1,66 @@
+{% extends 'registration/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% block content %}
+
+<div class="register">
+    <div class="row">
+        {% if form.errors %}
+        <p class="text-danger"> Some Information Might be Incorrect </p>
+        {% endif %}
+        <div class="col-sm-6">
+            <img src="{% static 'images/bg-register.jpg'%}" class="img-fluid img-thumbnail reg-img">
+        </div>
+
+        <div class="col-sm-6 general-form">
+            <h4 class="text-center"><a href="/" class="login-info">WELCOME TO AWWWARDS</a></h4>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="alternative">Register with</p>
+                </div>
+                <div class="col-sm-6">
+                    <p class="alternative">Are you a member?<span><a href="/accounts/login/" class="register">Login now</a></span></p>
+                </div>
+            </div>
+            <div class="login_btns">
+                <div class="row register-btns">
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-block" id="google"><img src="{% static 'images/google.png' %}" alt="logo" class="fb-logo">&nbsp;&nbsp;<strong>Google</strong></button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-block" id="twitter"><img src="{% static 'images/twitter.png' %}" class="fb-logo" alt="logo">&nbsp;&nbsp;<strong>Twitter</strong></button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="submit" class="btn btn-primary btn-block" id="facebook"><img src="{% static 'images/facebook.png' %}" alt="logo" class="fb-logo">&nbsp;&nbsp;<strong>Facebook</strong></button>
+                    </div>
+                </div>
+            </div>
+            <p class="reg-alternative">Or with your details</p>
+            <div class="actual-form">
+                <form action="/accounts/register/" method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+
+                    <p class="text-center">Awwwards may keep me informed with personalized emails about<br>products and services. See our&nbsp;<a href="#" class="privacy-policy">Privacy Policy</a>&nbsp;for more details.</p>
+
+                    <div class="input-check">
+                        <input id="remember_me" name="_remember_me" type="checkbox">&nbsp;
+                        <label for="remember_me">Please contact me via e-mail</label><br>
+                        <input id="remember_me" name="_remember_me" type="checkbox">&nbsp;<label for="remember_me">I have read and accepted the <a href="#" class="privacy-policy">Terms and Conditions</a> and <a href="#" class="privacy-policy">Privacy Policy</a></label>
+                    </div>
+
+    
+
+
+                    <button class="login-btn" type="submit">CREATE YOUR ACCOUNT</button>
+                    <input type="hidden" name="next" value="{{next}}">
+                    <p class="text-center terms">&#169;2022 Awwwards. All rights reserved.<br>By signing up, I agree to Awwwards's<br><a href="#" class="privacy-policy">Terms of service</a>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+.register-btns{
+    margin-top: 1.5vw;
+}
+.reg-alternative{
+    font-weight: 600;
+    font-size: 19px;
+    margin-top: 1.5vw;
+}
+.privacy-policy{
+    font-weight: bolder;
+    font-size: 15px;
+    color: #49c5b6;
+    text-decoration: none;
+}
+.privacy-policy:hover{
+    color: #49c5b6;
+}
