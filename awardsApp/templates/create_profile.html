@@ -2,6 +2,13 @@
 {% load bootstrap4 %}
 
 {% block content %}
-
-
+<div class="container">
+    <h1 class="text-center">Create a profile to start using <strong>Awwwards</strong></h1>
+    <hr>
+    <form action="{%url 'create_profile'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}    
+        {% bootstrap_form form%}
+        <button class="btn-success submitproj-btn" type="submit">CREATE PROFILE</button>
+    </form>
+</div>
 {%endblock%}
