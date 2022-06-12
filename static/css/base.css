@@ -1,12 +1,12 @@
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 .ukraine{
     background-color: black;
     padding: 15px;
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
 }
 .ukraine a:hover{
     color: white;
@@ -14,4 +14,15 @@
 }
 .ukraine span{
     color: white!important;
+}
+.close-block a{
+    color: black;
+    text-decoration: none!important;
+}
+.close-block a:hover{
+    color: #8e8e8e;
+}
+.close-block img{
+    height: 30px;
+    width: 30px;
 }
