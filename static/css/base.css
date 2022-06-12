@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* --------------NAVBAR------------------------------ */
 .ukraine{
     background-color: black;
     padding: 15px;
@@ -15,6 +16,18 @@
 .ukraine span{
     color: white!important;
 }
+.welcome-info{
+    display: flex;
+    justify-content: space-between;
+}
+.welcome-info a{
+    color: black;
+    text-decoration: underline;
+}
+.welcome-info a:hover{
+    color: #8e8e8e;
+}
+/* -----------------------------------------FOOTER----------------------------------------------------- */
 .close-block a{
     color: black;
     text-decoration: none!important;
@@ -36,3 +49,7 @@
     color: black!important;
     text-decoration: underline!important;
 }
+
+
+
+

@@ -15,7 +15,6 @@
 
     {% block styles %}
       {% bootstrap_css %}
-      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" /> -->
       <link rel="icon" href="https://assets.awwwards.com/assets/images/favicon.svg" type="image/svg+xml">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -32,6 +31,7 @@
 
 
     {% block scripts %}
+        <script src="https://kit.fontawesome.com/f8fc184848.js" crossorigin="anonymous"></script>
         <script src="{% static 'js/base.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     {% bootstrap_javascript %}
