@@ -26,3 +26,13 @@
     height: 30px;
     width: 30px;
 }
+.socials{
+    display: inline-block;
+}
+.footer-info a{
+    color: black!important;
+}
+.footer-info a:hover{
+    color: black!important;
+    text-decoration: underline!important;
+}
