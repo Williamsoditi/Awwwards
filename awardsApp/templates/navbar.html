@@ -45,10 +45,25 @@
                     <a class="dropdown-item" href="/project/project/">Add Project</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
                     {% else %}
+                    <small class="text-center">Please log in</small>
                     <a class="nav-link" href="/accounts/login/">Register/Login</a>
                     {% endif %}
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    API's
+                </a>
+                <div class="dropdown-menu">
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Projects</a>
+                    {% else %}
+                    <small>Please log-in</small>
+                    {% endif %}
+                </div>
+            </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
             <div class="input-group " >
@@ -57,6 +72,6 @@
                 <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
               </div>
             </div>
-          </form>
+        </form>
     </div>
 </nav>
