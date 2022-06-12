@@ -3,3 +3,15 @@
     padding: 0%;
     box-sizing: border-box;
 }
+.ukraine{
+    background-color: black;
+    padding: 15px;
+    font-size: 2.5vw;
+}
+.ukraine a:hover{
+    color: white;
+    text-decoration: none;
+}
+.ukraine span{
+    color: white!important;
+}
