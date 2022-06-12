@@ -1,8 +1,13 @@
-{%  load static%}
-<div class=" text-center ukraine">
-    <a href="https://www.savethechildren.org/us/where-we-work/ukraine" rel="nofollow" target="_blank" class="box-ukraine">
+{% load static %}
+<div class="text-center ukraine">
+    <a href="https://www.savethechildren.org/us/where-we-work/ukraine" rel="nofollow" target="_blank"
+        class="box-ukraine">
         <span>#StopWarInUkraine</span>
-        <svg viewBox="0 0 512 512" width="20" height="20"><rect fill="#2a75e6" height="352" rx="10" width="496" x="8" y="80"></rect><path d="M8,256H504a0,0,0,0,1,0,0V422a10,10,0,0,1-10,10H18A10,10,0,0,1,8,422V256a0,0,0,0,1,0,0Z" fill="#f9d549"></path></svg>
+        <svg viewBox="0 0 512 512" width="20" height="20">
+            <rect fill="#2a75e6" height="352" rx="10" width="496" x="8" y="80"></rect>
+            <path d="M8,256H504a0,0,0,0,1,0,0V422a10,10,0,0,1-10,10H18A10,10,0,0,1,8,422V256a0,0,0,0,1,0,0Z"
+                fill="#f9d549"></path>
+        </svg>
         <span>Save the children</span>
     </a>
 </div>
@@ -17,4 +22,41 @@
         </div>
     </div>
 </div>
-<hr>
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+    <a class="navbar-brand" href="/"><strong>awwwards.</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/accounts/login/">Register/Login</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    My Account
+                </a>
+                <div class="dropdown-menu">
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="/project/project/">Add Project</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    {% else %}
+                    <a class="nav-link" href="/accounts/login/">Register/Login</a>
+                    {% endif %}
+                </div>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
+            <div class="input-group " >
+              <input type="text" class="form-control" placeholder="Search projects by title..." name="search"  >
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </form>
+    </div>
+</nav>
