@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+{% if project.image %}
+<div class="container-fluid project">
+    <div class="header">
+        <h1 class="text-center">{{ project.title }}</h1>
+    </div>
+    <section class="single-top-header"
+        style="height: 75vh; margin-bottom: 5%;">
+        {% else %}
+        <section class="single-top-header">
+            {% endif %}
+        </section>
+    </section>
+    <div class="row rating">
+        <div class="col-md-6">
+            <form action="{% url 'rate' project.id %}" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="Design">Design</label>
+                    <input type="number" class="form-control" name="design" min="0" max="10" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="Content">Content</label>
+                    <input type="number" class="form-control" name="content" min="0" max="10" value="0">
+                </div>
+                <div class="mb-3">
+                    <label for="Usability">Usability</label>
+                    <input type="number" class="form-control" name="usability" min="0" max="10" value="0">
+                </div>
+                <button class="btn btn-outline-dark text-white rounded-pill" type="submit" style="background-color: #49c5b6!important;">Rate</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">
+                <b>Project Ratings</b></h2>
+            <p>
+                {% for rate in rating %}
+
+                <div class="row text-center">
+                    <div class="col-md-2">
+                        <p>{{user.username}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Design: {{rate.design}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Content: {{rate.content}}</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Usability:{{rate.usability}}</p>
+                    </div>
+                    <div class="col-md-2">
+                        <p>Average:{{rate.avarage}}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="alert alert-danger" role="alert">No ratings yet! Please add your ratings...</p>
+                {% endfor %}
+
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

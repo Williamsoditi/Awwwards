@@ -8,7 +8,8 @@
     <form action="{%url 'create_profile'%}" method="post" enctype="multipart/form-data">
         {%csrf_token%}    
         {% bootstrap_form form%}
-        <button class="btn-success submitproj-btn" type="submit">CREATE PROFILE</button>
+        <button type="submit" style="background-color: #49c5b6!important;color: #fff!important;font-weight: bold!important;width: 100%!important;border: none!important;text-align: center!important;padding: 1vw!important;">CREATE PROFILE</button>
+        <input type="hidden" name="next" value="{{next}}">    
     </form>
 </div>
 {%endblock%}
