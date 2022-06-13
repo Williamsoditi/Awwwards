@@ -59,8 +59,8 @@
                 </a>
                 <div class="dropdown-menu">
                     {% if user.is_authenticated %}
-                    <a class="dropdown-item" href="#">Profile</a>
-                    <a class="dropdown-item" href="#">Projects</a>
+                    <a class="dropdown-item" href="api/profile/" target="_blank">Profile</a>
+                    <a class="dropdown-item" href="api/project/" target="_blank">Projects</a>
                     {% else %}
                     <small>Please log-in</small>
                     {% endif %}
