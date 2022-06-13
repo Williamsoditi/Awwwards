@@ -27,7 +27,6 @@ MODE=config("MODE", default="dev")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-#SECRET_KEY = 'django-insecure-pqe(i3a7bj45qzl_0h!0878(vii2^4ydaf)fj55xse#64wqu99'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)

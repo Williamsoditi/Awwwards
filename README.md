@@ -13,15 +13,15 @@
 ## Description
 Awwwards is a platform that allows developers to submit their projects/applications to be rated based on design, usability and content. Developers are also able to see other developers' profile and projects. Each day, the project with the highest average score is featured on the landing page.
 
-<!-- ![Project-design](/static/images/Screenshot%20from%202022-06-08%2011-39-52.png) -->
+![Project-design](/static/images/Screenshot%20from%202022-06-08%2011-39-52.png)
 
 The following is a live link to the project:
-[Click here]()
+[Click here](https://mambas-awwwards.herokuapp.com/)
 
 
 ## Installation process
 To access my repository link:
-[Click here](https://github.com/Williamsoditi/Instagram-Lite.git)
+[Click here](https://github.com/Williamsoditi/Awwwards.git)
 
 *To clone this repository locally, type the following command on your terminal.*
 
