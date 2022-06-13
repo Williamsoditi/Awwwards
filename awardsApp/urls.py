@@ -11,4 +11,6 @@ urlpatterns=[
     path('update_profile/<int:id>',views.update_profile, name='update_profile'),
     path("project/<int:project_id>/", views.project_details, name="project_details"),
     path("rate/<int:id>",views.rate, name='rate'),
+    # path('api/profile/profile-id/<int:pk>/', views.ProfileList.as_view()),
+    # path('api/project/project-id/<int:pk>/', views.ProjectList.as_view()),
 ]

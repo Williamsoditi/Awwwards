@@ -6,6 +6,9 @@ from .forms import ProjectForm, ProfileForm, UpdateProfileForm
 import cloudinary.api
 import cloudinary.uploader
 import cloudinary
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer, ProfileSerializer
 
 # Create your views here.
 def welcome(request):
@@ -130,10 +133,23 @@ def rate(request,id):
             user=current_user,
             design=design,
             usability=usability,
-            content_rate=content,
-            avarage_rate=round((float(design)+float(usability)+float(content))/3,2),)
+            content=content,
+            average=round((float(design)+float(usability)+float(content))/3,2),
+        )
 
         return render(request,"project_details.html",{"project":project})
     else:
         project = Project.objects.get(id = id) 
         return render(request,"project_details.html",{"project":project})
+
+# class ProjectList(APIView):
+#     def get(self, request, format=None):
+#         all_projects = Project.objects.all()
+#         serializers = ProjectSerializer(all_projects, many=True)
+#         return Response(serializers.data)
+
+# class ProfileList(APIView):
+#     def get(self, request, format=None):
+#         all_profiles = Profile.objects.all()
+#         serializers = ProfileSerializer(all_profiles, many=True)
+#         return Response(serializers.data)
