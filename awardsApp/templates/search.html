@@ -3,8 +3,12 @@
 {% block content %}
 
 <div class="container text-center">
-    <div class="row">
-        <h1 class="text-center">These are the results for your search "{{ found }}"</h1>
+    <div class="row mt-3">
+      {% if projects %}
+      <h2>Found {{ projects|length }} of searched term {{ found }}</h2>
+      {% else %}
+      <h2> Found 0 projects for the search term {{ found }}. Have you searched by<br> project-title? Please try again.</h2>
+      {% endif %}
     </div>
     <div class="row">
         {% for project in projects %}
@@ -12,9 +16,10 @@
           <img src="{{ project.image.url }}" class="card-img-top" alt="..." style="object-fit: cover;height: 260px;">
           <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
-            <h5 class="card-title">{{ project.category }}</h5>
+            <h5 class="card-title">{{ project.description }}</h5>
+            <h5 class="card-title">{{ project.date }}</h5>
             <p class="card-text">
-              <a href="{{project.url}}" class="btn btn-outline-dark bg-success text-white rounded-pill">View Project</a>
+              <a href="{{project.url}}" target="_blank"><button type="submit" style="background-color: #49c5b6!important;color: #fff!important;font-weight: bold!important;width: 100%!important;border: none!important;text-align: center!important;padding: 1vw!important;">VIEW PROJECT</button></a>
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% if project.image %}
-<div class="container-fluid project">
+<div class="container-fluid mt-5">
     <div class="header">
         <h1 class="text-center">{{ project.title }}</h1>
     </div>
@@ -35,6 +35,7 @@
             <h2 class="text-center">
                 <b>Project Ratings</b></h2>
             <p>
+                <hr>
                 {% for rate in rating %}
 
                 <div class="row text-center">

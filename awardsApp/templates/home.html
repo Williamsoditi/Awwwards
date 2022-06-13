@@ -14,12 +14,12 @@
               <div class="card anime">
                 <a href="{%url 'project_details' project.id%}"><img class="img-fluid img-thumbnail" src="{{project.image.url}}" alt="Card image">
                 </a>
-                <div class="card__share text-center mt-4">
-                  <a id="share" class="share-icon" href="{{project.url}}" target="_blank">Visit Site</a>
-                </div>
                 <div class="card-body">
                   <h5 class="card-title">{{project.project_name}}</h5>
                   <p class="card-text">{{project.description}}</p>
+                </div>
+                <div class="card__share text-center mt-3">
+                  <a id="share" class="share-icon" href="{{project.url}}" target="_blank">Visit Site</a>
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">Posted {{project.date |timesince }}</small><br>
