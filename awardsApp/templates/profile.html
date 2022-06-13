@@ -1,5 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="card col-sm-6 text-center">
+            {% if profile.profile_photo %}
+            <img src="{{profile.profile_photo.url}}" class="img-fluid img-thumbnail">
+            {%else%}
+            <img src="{% static 'images/user.png' %}"
+                class="card-img-top img-fluid img-thumbnail" alt="My profile picture">
+            {% endif %}
+
+            <div class="card-body">
+                <h6><strong>Profile details</strong></h6>
+                <hr>
+                <p><strong>Username:</strong> {{ user.username }}</p>
+
+                <p>
+                    {% if profile.bio %}
+                    <small><strong>Bio:</strong> {{ profile.bio }}</small>
+                    {% else %}
+                    <span class="text-danger">No bio</span>
+                    {% endif %}
+                </p>
+                <h6><strong>Joined on:</strong> {{ user.date_joined }}</h6>
+                <p><strong>Contact:</strong> {{ profile.contact }}</p>
+                <p><strong>Email:</strong> {{ profile.email }}</p>
+            </div>
+        </div>
+        <div class="col-sm-6 text-center">
+            <div class="row">
+                <h3>Username: {{user.username}}</h3>
+                <br>
+                {% if request.user is user %} {% endif %}
+                <div>
+                    <form action="/project/project/" class="mt-5">
+                        <button type="submit" style="background-color: #49c5b6!important;color: #fff!important;font-weight: bold!important;width: 100%!important;border: none!important;text-align: center!important;padding: 1vw!important;">POST PROJECT</button>
+                    </form>
+                    <a href="{%url 'create_profile' %}"
+                        class="btn btn-outline-dark bg-dark text-white mt-3">
+                        Edit Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
