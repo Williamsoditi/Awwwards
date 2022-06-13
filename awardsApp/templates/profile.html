@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+{% load bootstrap4 %}
 
-<div class="container mt-5">
+<div class="container-fluid mt-5 text-center">
     <div class="row">
         <div class="card col-sm-6 text-center">
             {% if profile.profile_photo %}
@@ -38,7 +39,7 @@
                     <form action="/project/project/" class="mt-5">
                         <button type="submit" style="background-color: #49c5b6!important;color: #fff!important;font-weight: bold!important;width: 100%!important;border: none!important;text-align: center!important;padding: 1vw!important;">POST PROJECT</button>
                     </form>
-                    <a href="{%url 'create_profile' %}"
+                    <a href="{%url 'update_profile' user.id  %}"
                         class="btn btn-outline-dark bg-dark text-white mt-3">
                         Edit Profile
                     </a>

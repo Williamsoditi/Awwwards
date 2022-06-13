@@ -11,8 +11,8 @@ class ProjectTestCase(TestCase):
         Create a project for testing
         """
         self.user=User(username='williams',email='williamsoditi99@@gmail.com',password='qwerty1234')
-        self.rate=Rating(user=self.user, content=0, usability=0, design=0, average=0)
         self.project=Project(image='SayCheese.jpg',title='SayCheese',description='SayCheese',url='github.com', user=self.user)
+        self.rate=Rating(user=self.user, content=0, usability=0, design=0, average=0)
 
 
     def test_instance(self):

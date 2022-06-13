@@ -24,9 +24,7 @@
     color: black;
     text-decoration: underline;
 }
-.welcome-info a:hover{
-    color: #8e8e8e;
-}
+
 /* -----------------------------------------FOOTER----------------------------------------------------- */
 .close-block a{
     color: black;
@@ -77,6 +75,10 @@
 .anime:hover img{
     transform: scale(2,2);
     cursor: pointer;
+}
+.updates{
+    align-content: center;
+    align-items: center;
 }
 
 

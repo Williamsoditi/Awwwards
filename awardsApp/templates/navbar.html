@@ -28,7 +28,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
+        <ul class="nav navbar-nav navbar-left">
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
@@ -68,13 +68,15 @@
             </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
-            <div class="input-group " >
-              <input type="text" class="form-control" placeholder="Search projects by title..." name="search"  >
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-              </div>
-            </div>
-        </form>
+        <ul class="nav navbar-nav navbar-right">
+            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search' %}">
+                <div class="input-group " >
+                  <input type="text" class="form-control" placeholder="Search projects by title..." name="search"  >
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                  </div>
+                </div>
+            </form>
+        </ul>  
     </div>
 </nav>
