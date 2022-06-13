@@ -3,5 +3,33 @@
 {% load bootstrap4 %}
 {% block content %}
 
+<h4 class="mt-5"><strong>Sites of the day</strong> Previous Winners</h4>
+
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        {% for project in project %}
+        <div class="col-md-4">
+            <div class="card-group">
+              <div class="card anime">
+                <a href="{%url 'project_details' project.id%}"><img class="img-fluid img-thumbnail" src="{{project.image.url}}" alt="Card image">
+                </a>
+                <div class="card__share text-center mt-4">
+                  <a id="share" class="share-icon" href="{{project.url}}" target="_blank">Visit Site</a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{project.project_name}}</h5>
+                  <p class="card-text">{{project.description}}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Posted {{project.date |timesince }}</small><br>
+                  <a href="{%url 'project_details' project.id%}"><button type="submit" style="background-color: #49c5b6!important;color: #fff!important;font-weight: bold!important;width: 100%!important;border: none!important;text-align: center!important;padding: 1vw!important;">RATE PROJECT</button></a>
+                </div>
+              </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {%endblock%}
